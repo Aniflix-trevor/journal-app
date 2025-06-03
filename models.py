@@ -32,6 +32,7 @@ class JournalEntry(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
+    title = Column(String(255), nullable=False)  # Added title column
     content = Column(Text, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     
